@@ -67,10 +67,10 @@ public class App {
             this.jFrameBiblio.getjTableBibliotheque().setValueAt(this.biblio.getListeLivres().get(i).getEdition_l(), i, 3);
             this.jFrameBiblio.getjTableBibliotheque().setValueAt(this.biblio.getListeLivres().get(i).getAnnee_edition_l(), i, 4);
             this.jFrameBiblio.getjTableBibliotheque().setValueAt(this.biblio.getListeLivres().get(i).getFormat_l(), i, 5);
-            this.jFrameBiblio.getjTableBibliotheque().setValueAt(this.biblio.getListeLivres().get(i).getNom_a(), i, 6);
-            this.jFrameBiblio.getjTableBibliotheque().setValueAt(this.biblio.getListeLivres().get(i).getId_exemplaire(), i, 7);
-            this.jFrameBiblio.getjTableBibliotheque().setValueAt(this.biblio.getListeLivres().get(i).getId_categorie(), i, 8);
-        }
+            this.jFrameBiblio.getjTableBibliotheque().setValueAt(this.biblio.getListeLivres().get(i).getId_exemplaire(), i, 6);
+            this.jFrameBiblio.getjTableBibliotheque().setValueAt(this.biblio.getListeLivres().get(i).getId_categorie(), i, 7);
+            this.jFrameBiblio.getjTableBibliotheque().setValueAt(this.biblio.getListeLivres().get(i).getId_a(), i, 8);
+}
     }
 
     public void afficherListejTableBiblio(ArrayList<Livre> list) {
@@ -84,9 +84,9 @@ public class App {
             this.jFrameBiblio.getjTableBibliotheque().setValueAt(this.biblio.getListeLivres().get(i).getEdition_l(), i, 3);
             this.jFrameBiblio.getjTableBibliotheque().setValueAt(this.biblio.getListeLivres().get(i).getAnnee_edition_l(), i, 4);
             this.jFrameBiblio.getjTableBibliotheque().setValueAt(this.biblio.getListeLivres().get(i).getFormat_l(), i, 5);
-            this.jFrameBiblio.getjTableBibliotheque().setValueAt(this.biblio.getListeLivres().get(i).getNom_a(), i, 6);
-            this.jFrameBiblio.getjTableBibliotheque().setValueAt(this.biblio.getListeLivres().get(i).getId_exemplaire(), i, 7);
-            this.jFrameBiblio.getjTableBibliotheque().setValueAt(this.biblio.getListeLivres().get(i).getId_categorie(), i, 8);
+            this.jFrameBiblio.getjTableBibliotheque().setValueAt(this.biblio.getListeLivres().get(i).getId_exemplaire(), i, 6);
+            this.jFrameBiblio.getjTableBibliotheque().setValueAt(this.biblio.getListeLivres().get(i).getId_categorie(), i, 7);
+            this.jFrameBiblio.getjTableBibliotheque().setValueAt(this.biblio.getListeLivres().get(i).getId_a(), i, 8);
         }
     }
 
@@ -112,13 +112,18 @@ public class App {
     }
 
     public void jFrameAjoutConfirmer() {
-        JOptionPane.showMessageDialog(null, "Ajout en cours...");
+        //JOptionPane.showMessageDialog(null, "Ajout en cours...");
         //tableLivres.insererLivre(jFrameAjout);
 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     public void getjTableAjout(){
         
         
+    }
+
+    public void jButtonConfirmer() {
+    JOptionPane.showMessageDialog(null, "Ajout en cours...");        
+//throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

@@ -91,6 +91,7 @@ public class JFrameAjout extends javax.swing.JFrame {
     private void jButtonConfirmerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmerActionPerformed
         // TODO add your handling code here:
         app.jFrameAjoutConfirmer();
+        app.jButtonConfirmer();
     }//GEN-LAST:event_jButtonConfirmerActionPerformed
 
     /**

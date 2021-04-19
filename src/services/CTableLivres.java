@@ -33,11 +33,12 @@ public class CTableLivres {
             String edition_l = rs.getString(5);
             String annee_edition_l = rs.getString(6);
             String format_l = rs.getString(7);
-            String nom_a = rs.getString(8);
-            String id_exemplaire = rs.getString(9);
-            String id_categorie = rs.getString(10);
+            String id_exemplaire = rs.getString(8);
+            String id_categorie = rs.getString(9);          
+            String id_a = rs.getString(10);
 
-            Livre livre = new Livre(id_l, titre_l, isbn_l, nombre_pages_l, edition_l, annee_edition_l, format_l, nom_a, id_exemplaire, id_categorie);
+
+            Livre livre = new Livre(id_l, titre_l, isbn_l, nombre_pages_l, edition_l, annee_edition_l, format_l, id_exemplaire, id_categorie, id_a);
 
             return livre;
         } catch (SQLException ex) {
@@ -90,16 +91,16 @@ public class CTableLivres {
         int res = -1;
         if (bdd.connecter() == true) {
             String req = "INSERT INTO `livre` (`Titre_l`, `isbn_l`,"
-                    + " `nombre_pages_l`, `edition_l`, `annee_edition_l`, `format_l`, `nom_a`, `id_exemplaire`, `id_categorie`) "
+                    + " `nombre_pages_l`, `edition_l`, `annee_edition_l`, `format_l`, `id_exemplaire`, `id_categorie`, `id_a`) "
                     + "VALUES ('" + CBDD.pretraiterChaineSQL(livre.getTitre_l())
                     + "', '" + CBDD.pretraiterChaineSQL(livre.getIsbn_l())
                     + "', '" + CBDD.pretraiterChaineSQL(livre.getNombre_pages_l())
                     + "', '" + CBDD.pretraiterChaineSQL(livre.getEdition_l())
                     + "', '" + CBDD.pretraiterChaineSQL(livre.getAnnee_edition_l())
                     + "', '" + CBDD.pretraiterChaineSQL(livre.getFormat_l())
-                    + "', '" + CBDD.pretraiterChaineSQL(livre.getNom_a())
                     + "', '" + CBDD.pretraiterChaineSQL(livre.getId_exemplaire())
-                    + "', '" + CBDD.pretraiterChaineSQL(livre.getId_categorie())
+                    + "', '" + CBDD.pretraiterChaineSQL(livre.getId_categorie())          
+                    + "', '" + CBDD.pretraiterChaineSQL(livre.getId_a())
                     + "');";
             res = bdd.executerRequeteUpdate(req);
             bdd.deconnecter();
@@ -156,9 +157,6 @@ public class CTableLivres {
                     + "`format_l` = '"
                     + CBDD.pretraiterChaineSQL(livre.getFormat_l())
                     + "', "
-                    + "`nom_a` = '"
-                    + CBDD.pretraiterChaineSQL(livre.getNom_a())
-                    + "', "
                     + "`id_exemplaire` = '"
                     + CBDD.pretraiterChaineSQL(livre.getId_exemplaire())
                     + "', "
@@ -166,6 +164,8 @@ public class CTableLivres {
                     + CBDD.pretraiterChaineSQL(livre.getId_categorie())
                     + "' WHERE `livres`.`id_l` = "
                     + CBDD.pretraiterChaineSQL(livre.getId_l())
+                    + "`id_a` = '"
+                    + CBDD.pretraiterChaineSQL(livre.getId_a())
                     + ";";
             res = bdd.executerRequeteUpdate(req);
             bdd.deconnecter();
@@ -187,14 +187,14 @@ public class CTableLivres {
         String edition_l = "l'edition";
         String annee_edition_l = "1989";
         String format_l = "le format";
-        String nom_a = "l'auteur";
         String id_exemplaire = "1";
-        String id_categorie = "2";
+        String id_categorie = "1";
+        String id_a = "1";
 
 
 
       // Livre livreTest = new Livre(titre_l, isbn_l, nombre_pages_l, edition_l, annee_edition_l, langue_l, format_l, resume_l);
-       Livre livreTest = new Livre(id_l, titre_l, isbn_l, nombre_pages_l, edition_l, annee_edition_l, format_l, nom_a, id_exemplaire, id_categorie);
+       Livre livreTest = new Livre(id_l, titre_l, isbn_l, nombre_pages_l, edition_l, annee_edition_l, format_l, id_exemplaire, id_categorie, id_a);
 
         table.insererLivre(livreTest);
 //        table.supprimerLivre(livreTest);

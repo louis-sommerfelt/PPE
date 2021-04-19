@@ -29,9 +29,9 @@ public class Livre {
     private String edition_l;
     private String annee_edition_l;
     private String format_l;
-    private String nom_a;
     private String id_exemplaire;
     private String id_categorie;
+    private String id_a;
 
 
     /*
@@ -41,19 +41,19 @@ public class Livre {
     nommer les paramètres comme les attributs. Attention donc à bien différencier
     les uns des autres grace à "this".
      */
-    public Livre(String titre_l, String isbn_l, String nombre_pages_l, String edition_l, String annee_edition_l, String format_l, String nom_a, String id_exemplaire, String id_categorie) {
+    public Livre(String titre_l, String isbn_l, String nombre_pages_l, String edition_l, String annee_edition_l, String format_l, String id_exemplaire, String id_categorie, String id_a) {
         this.titre_l = titre_l;
         this.isbn_l = isbn_l;
         this.nombre_pages_l = nombre_pages_l;
         this.edition_l = edition_l;
         this.annee_edition_l = annee_edition_l;
         this.format_l = format_l;
-        this.nom_a = nom_a;
         this.id_exemplaire = id_exemplaire;
         this.id_categorie = id_categorie;
-    }
+        this.id_a = id_a;
+}
 
-    public Livre(String id, String titre_l, String isbn_l, String nombre_pages_l, String edition_l, String annee_edition_l, String format_l, String nom_a, String id_exemplaire, String id_categorie) {
+    public Livre(String id, String titre_l, String isbn_l, String nombre_pages_l, String edition_l, String annee_edition_l, String format_l, String id_exemplaire, String id_categorie, String id_a) {
         this.id_l = id;
         this.titre_l = titre_l;
         this.isbn_l = isbn_l;
@@ -61,10 +61,10 @@ public class Livre {
         this.edition_l = edition_l;
         this.annee_edition_l = annee_edition_l;
         this.format_l = format_l;
-        this.nom_a = nom_a;
         this.id_exemplaire = id_exemplaire;
         this.id_categorie = id_categorie;
-    }
+        this.id_a = id_a;
+}
     
 
     /*
@@ -159,12 +159,12 @@ public class Livre {
         return id_l;
     }
 
-    public String getNom_a() {
-        return nom_a;
+    public String getId_a() {
+        return id_a;
     }
 
-    public void setNom_a(String nom_a) {
-        this.nom_a = nom_a;
+    public void setId_a(String id_a) {
+        this.id_a = id_a;
     }
 
     public String getId_exemplaire() {
@@ -229,11 +229,11 @@ public class Livre {
         String edition_l = "edition";
         String annee_edition_l = "annee_edition_l";
         String format_l = "format";
-        String nom_a = "auteur";
         String id_exemplaire = "exemplaire";
         String id_categorie = "categorie";
+        String id_a = "auteur";
 
-        Livre livreTest = new Livre(titre_l, isbn_l, nombre_pages_l, edition_l, annee_edition_l, format_l, nom_a, id_exemplaire, id_categorie);
+        Livre livreTest = new Livre(titre_l, isbn_l, nombre_pages_l, edition_l, annee_edition_l, format_l, id_exemplaire, id_categorie, id_a);
 
         // livreTest.afficher();
         System.out.println(livreTest.toString());
