@@ -17,15 +17,15 @@ public class Inscrit {
     différencier les objets.
      */
     private String id_inscrit = "-1";
-    private String dateNaissance_i;
+    private String date_naissance_i;
     private String nom_i;
     private String prenom_i;
     private String rue_i;
     private String cp_i;
-    private String ville_i;
+    //private String ville_i;
     private String email_i;
     private String tel_i;
-    private String motDePasse_i;
+    private String mot_de_passe_i;
 
 
     /*
@@ -35,29 +35,27 @@ public class Inscrit {
     nommer les paramètres comme les attributs. Attention donc à bien différencier
     les uns des autres grace à "this".
      */
-    public Inscrit(String dateNaissance_i, String nom_i, String prenom_i, String rue_i, String cp_i, String ville_i, String email_i, String tel_i, String motDePasse_i) {
-        this.dateNaissance_i = dateNaissance_i;
+    public Inscrit(String date_naissance_i, String nom_i, String prenom_i, String rue_i, String cp_i, String email_i, String tel_i, String mot_de_passe_i) {
+        this.date_naissance_i = date_naissance_i;
         this.nom_i = nom_i;
         this.prenom_i = prenom_i;
         this.rue_i = rue_i;
         this.cp_i = cp_i;
-        this.ville_i = ville_i;
         this.email_i = email_i;
         this.tel_i = tel_i;
-        this.motDePasse_i = motDePasse_i;
+        this.mot_de_passe_i = mot_de_passe_i;
     }
 
-    public Inscrit(String id, String dateNaissance_i, String nom_i, String prenom_i, String rue_i, String cp_i, String ville_i, String email_i, String tel_i, String motDePasse_i) {
+    public Inscrit(String id, String date_naissance_i, String nom_i, String prenom_i, String rue_i, String cp_i, String email_i, String tel_i, String mot_de_passe_i) {
         this.id_inscrit = id;
-        this.dateNaissance_i = dateNaissance_i;
+        this.date_naissance_i = date_naissance_i;
         this.nom_i = nom_i;
         this.prenom_i = prenom_i;
         this.rue_i = rue_i;
         this.cp_i = cp_i;
-        this.ville_i = ville_i;
         this.email_i = email_i;
         this.tel_i = tel_i;
-       this.motDePasse_i = motDePasse_i;
+        this.mot_de_passe_i = mot_de_passe_i;
     }
     
 
@@ -77,20 +75,20 @@ public class Inscrit {
         this.id_inscrit = idString;
     }
 
-    public String getId() {
+    public String getId_inscrit() {
         return id_inscrit;
     }
 
-    public void setId(String id) {
-        this.id_inscrit = id;
+    public void setId_inscrit(String id_inscrit) {
+        this.id_inscrit = id_inscrit;
     }
 
-    public String getDateNaissance_i() {
-        return dateNaissance_i;
+    public String getDate_naissance_i() {
+        return date_naissance_i;
     }
 
-    public void setDateNaissance_i(String dateNaissance_i) {
-        this.dateNaissance_i = dateNaissance_i;
+    public void setDate_naissance_i(String date_naissance_i) {
+        this.date_naissance_i = date_naissance_i;
     }
 
     public String getNom_i() {
@@ -125,14 +123,6 @@ public class Inscrit {
         this.cp_i = cp_i;
     }
 
-    public String getVille_i() {
-        return ville_i;
-    }
-
-    public void setVille_i(String ville_i) {
-        this.ville_i = ville_i;
-    }
-
     public String getEmail_i() {
         return email_i;
     }
@@ -149,12 +139,12 @@ public class Inscrit {
         this.tel_i = tel_i;
     }
 
-    public String getMotDePasse_i() {
-        return motDePasse_i;
+    public String getMot_de_passe_i() {
+        return mot_de_passe_i;
     }
 
-    public void setMotDePasse_i(String motDePasse_i) {
-        this.motDePasse_i = motDePasse_i;
+    public void setMot_de_passe_i(String mot_de_passe_i) {
+        this.mot_de_passe_i = mot_de_passe_i;
     }
 
    

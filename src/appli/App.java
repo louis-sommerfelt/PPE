@@ -43,7 +43,7 @@ public class App {
     }
 
     public void majBiblio() { //mise a jour
-        biblio.setListeLivres(tableLivres.lireLivres()); // ca va cherhcher les livres pour les mettre dans une liste
+        biblio.setListeLivres(tableLivres.lireLivres()); // ça va chercher les livres pour les mettre dans une liste
         this.afficherListejTableBiblio();
     }
 
@@ -78,7 +78,7 @@ public class App {
 
         for (int i = 0; i < list.size(); i++) {
             this.jFrameBiblio.idLivres[i] = this.biblio.getListeLivres().get(i).getId_l();
-            this.jFrameBiblio.getjTableBibliotheque().setValueAt(this.biblio.getListeLivres().get(i).getTitre_l(), i, 0); //ligne i comlonne 0
+            this.jFrameBiblio.getjTableBibliotheque().setValueAt(this.biblio.getListeLivres().get(i).getTitre_l(), i, 0); //ligne i colonne 0
             this.jFrameBiblio.getjTableBibliotheque().setValueAt(this.biblio.getListeLivres().get(i).getIsbn_l(), i, 1);  //ligne 0 colonne 1
             this.jFrameBiblio.getjTableBibliotheque().setValueAt(this.biblio.getListeLivres().get(i).getNombre_pages_l(), i, 2);
             this.jFrameBiblio.getjTableBibliotheque().setValueAt(this.biblio.getListeLivres().get(i).getEdition_l(), i, 3);
@@ -89,6 +89,26 @@ public class App {
             this.jFrameBiblio.getjTableBibliotheque().setValueAt(this.biblio.getListeLivres().get(i).getId_a(), i, 8);
         }
     }
+    
+    public void ajouterLivreIHM() {
+        //censé pouvoir récupérer les infos de la table et ensuite créer un ajout dans la table Livre.
+       String titre_l = this.jFrameAjout.getjTableAjout().getValueAt(0, 0).toString();
+       String isbn_l = this.jFrameAjout.getjTableAjout().getValueAt(0,1).toString();
+       String nombrePages_l = this.jFrameAjout.getjTableAjout().getValueAt(0,2).toString();
+       String edition_l = this.jFrameAjout.getjTableAjout().getValueAt(0,3).toString();
+       String annee_edition_l = this.jFrameAjout.getjTableAjout().getValueAt(0,4).toString();
+       String format_l = this.jFrameAjout.getjTableAjout().getValueAt(0,5).toString();
+       String id_exemplaire = this.jFrameAjout.getjTableAjout().getValueAt(0,6).toString();
+       String id_categorie = this.jFrameAjout.getjTableAjout().getValueAt(0,7).toString();
+       String id_a = this.jFrameAjout.getjTableAjout().getValueAt(0,8).toString();
+       Livre livre = this.biblio.creationLivre(titre_l, isbn_l, nombrePages_l, edition_l, annee_edition_l, format_l, id_exemplaire, id_categorie, id_a);
+       this.tableLivres.insererLivre(livre);
+       this.majBiblio();
+       System.out.println("Point d'arrêt");
+       
+       
+    }  
+    
 
     public static void main(String[] args) {
         new App().runBibliothequeIHM();

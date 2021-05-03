@@ -28,6 +28,8 @@ public class JFrameAjout extends javax.swing.JFrame {
      */
     public JFrameAjout() {
         initComponents();
+//        this.jTableAjout.getCellEditor().stopCellEditing();
+//        this.app.ajouterLivreIHM();
     }
 
     /**
@@ -90,6 +92,8 @@ public class JFrameAjout extends javax.swing.JFrame {
 
     private void jButtonConfirmerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmerActionPerformed
         // TODO add your handling code here:
+        this.jTableAjout.getCellEditor().stopCellEditing();
+        this.app.ajouterLivreIHM();
         app.jFrameAjoutConfirmer();
         app.jButtonConfirmer();
     }//GEN-LAST:event_jButtonConfirmerActionPerformed
@@ -134,4 +138,10 @@ public class JFrameAjout extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableAjout;
     // End of variables declaration//GEN-END:variables
+
+    public JTable getjTableAjout() {
+        return jTableAjout;
+    }
+
+
 }
